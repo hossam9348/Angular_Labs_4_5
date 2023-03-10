@@ -1,0 +1,19 @@
+<div class="bg-dark p-3">
+    <div class="container">
+        <div class="card">
+            <img src="{{ product?.imgUrl }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ product?.productName }}</h5>
+                <p class="card-text">
+                    price: {{ product?.price }}
+                </p>
+                <p class="card-text">
+                    quantity: {{ product?.quantity }}
+                </p>
+                <a [ngClass]="{'btn-danger': product?.quantity==0}" class="btn btn-primary">{{
+                    product?.quantity===0?'sold
+                    out' : 'Buy Now' }}</a>
+            </div>
+        </div>
+    </div>
+</div>

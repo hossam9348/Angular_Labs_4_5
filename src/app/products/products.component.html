@@ -1,0 +1,26 @@
+<div class="container p-5">
+    <table class="table">
+     <thead>
+       <tr>
+         <th>id</th>
+         <th>Name</th>
+         <th>Price</th>
+         <th>Quantity</th>
+         <th>Actions</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}</td>
+        <td>
+            <i class="bi bi-pencil-square mx-1 fs-4"></i>
+            <i class="bi bi-archive-fill  mx-1 fs-4"></i>
+            <i class="bi bi-binoculars-fill mx-1 fs-4" [routerLink]="['/products' ,product.id]"></i>
+        </td>
+       </tr>
+     </tbody>
+    </table>
+ </div>
