@@ -15,4 +15,12 @@ export class ProductService {
   getProductByID(productId:number):Iproduct{
     return productsList.filter((product) => product.id == productId)[0];
   }
+
+  deleteProductByID(productId:number):void{
+    ;
+    const indexOfObject = productsList.findIndex((object) => {
+      return object.id === productsList.filter((product) => product.id == productId)[0].id;
+    });
+    productsList.splice(indexOfObject, 1);
+  }
 }

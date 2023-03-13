@@ -16,8 +16,8 @@
         <td>{{product.price}}</td>
         <td>{{product.quantity}}</td>
         <td>
-            <i class="bi bi-pencil-square mx-1 fs-4"></i>
-            <i class="bi bi-archive-fill  mx-1 fs-4"></i>
+            <i class="bi bi-pencil-square mx-1 fs-4" [routerLink]="['/products/edit', product.id]"></i>
+            <i class="bi bi-archive-fill  mx-1 fs-4" [routerLink]="['/products/delete', product.id]"></i>
             <i class="bi bi-binoculars-fill mx-1 fs-4" [routerLink]="['/products' ,product.id]"></i>
         </td>
        </tr>

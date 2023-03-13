@@ -17,6 +17,5 @@ export class LoginComponent {
  login():void{
   this.loginService.login(this.userName, this.password);
   this.router.navigate(['/products']);
-  console.log(this.password);
  }
 }

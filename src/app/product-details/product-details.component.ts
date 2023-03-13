@@ -14,7 +14,6 @@ product: null | Iproduct = null;
 constructor(private activatedRoute: ActivatedRoute, private productService: ProductService){}
   ngOnInit(): void {
     this.productId =Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    console.log( this.productId );
     this.product = this.productService.getProductByID(this.productId);
   }
 }

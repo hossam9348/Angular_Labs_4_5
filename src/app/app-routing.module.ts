@@ -1,3 +1,4 @@
+import { ProductDeleteComponent } from './product-delete/product-delete.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
-  { path: 'products/:id/edit', component: ProductEditComponent },
+  { path: 'products/edit/:id', component: ProductEditComponent },
+  { path: 'products/delete/:id', component: ProductDeleteComponent},
   { path: '**', component: NotFoundComponent },
 ];
 
