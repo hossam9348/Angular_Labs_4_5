@@ -15,7 +15,7 @@ export class ProductDeleteComponent {
   constructor(private activatedRoute: ActivatedRoute, private productService:ProductService, private router:Router,){}
   ngOnInit(): void {
     this.productId =Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.productService.deleteProductByID(this.productId);
+    this.productService.deleteProductByID(this.productId).subscribe();
     this.router.navigate(['/products']);
   }
 }

@@ -1,1 +1,26 @@
-<p>product-edit works!</p>
+<div class="container">
+    <form [formGroup]="productForm" (submit)="submitForm($event)">
+        <div class="mb-3">
+            <label for="Name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="Name" formControlName="productName">
+            <div *ngIf="productForm.controls['productName'].touched" id="nameHelp" class="form-text text-danger">{{ productForm.controls['productName'].errors | json }}</div>
+        </div>
+        <div class="mb-3">
+            <label for="Price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="Price" formControlName="price">
+            <div *ngIf="productForm.controls['price'].touched" id="priceHelp" class="form-text text-danger">{{ productForm.controls['price'].errors | json }}</div>
+        </div>
+        <div class="mb-3">
+            <label for="Quality" class="form-label">Quality</label>
+            <input type="number" class="form-control" id="quantity" formControlName="quantity">
+            <div *ngIf="productForm.controls['quantity'].touched" id="quantityHelp" class="form-text text-danger">{{ productForm.controls['quantity'].errors | json }}</div>
+        </div>
+        <div class="mb-3">
+            <label for="Url" class="form-label">Url</label>
+            <input type="text" class="form-control" id="Url" formControlName="imgUrl">
+            <div *ngIf="productForm.controls['imgUrl'].touched" id="urlHelp" class="form-text text-danger">{{ productForm.controls['imgUrl'].errors | json }}</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">{{ productId? 'edit product': 'add product' }}</button>
+    </form>
+</div>

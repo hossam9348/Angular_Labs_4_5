@@ -8,9 +8,9 @@ import { Iproduct } from 'src/app/iproduct';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: Iproduct[] = [];
+  products: any = [];
   constructor(private productService:ProductService){}
   ngOnInit(): void {
-    this.products = this.productService.getAllProducts();
+     this.productService.getAllProducts().subscribe((response)=>{this.products=response});
   }
 }
